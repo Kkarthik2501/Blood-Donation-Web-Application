@@ -13,3 +13,6 @@ To use this applicaiton, you would need the following dependencies:
 2. MongoDB
 
 After installing Node.js, start the backend server by running `node server2.js`
+Then create a database in mongodb which includes list of donors and start the connection.
+Open the index2.html file and enter the details.
+After clicking on submit the list of donors that matches the blood group of the patient will be displayed.
