@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+
+function enterData()
+{
+const token=localStorage.getItem("token");
+var a=document.getElementById("name").value;
+var b=document.getElementById("location").value;
+var c=document.getElementById("bloodgroups").value;
+var d=document.getElementById("age").value;
+var e=document.getElementById("number").value;
+var f=document.getElementById("email").value;
+var p=document.getElementById("private").value;
+const emps={
+  "Name":a,
+  "location":b,
+  "bloodgroup":c,
+  "Age":d,
+  "Number":e,
+  "Email":f,
+  "private":p
+};
+fetch("http://localhost:4000/addemp",{
+  method:"POST",
+  headers:{
+      "content-type":"application/json"
+  },
+body:JSON.stringify(emps)  
+})
+}
+</script>
+    <style>
+        body {
+          background-image: url('loginbg.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+        }
+        button:hover{
+          background-color:crimson;
+          opacity: 0.5px;
+          color:yellow;
+        }
+    </style>
+    
+  </head>
+<body>
+    <center>
+        <h2>Registration page</h2>
+    <br>
+    
+        <label>Name:</label><input type="text" id="name"><br><br>
+        <label>location:</label>
+        <select name="loc" id="location">
+          <option value="Secunderabad">Secunderabad</option>
+          <option value="Nagole">Nagole</option>
+          <option value="Uppal">Uppal</option>
+          <option value="LB.Nagar">LB.Nagar</option>
+          <option value="Hayathnagar">Hayathnagar</option>
+          <option value="Karmanghat">Karmanghat</option>
+          <option value="Kukatpally">Kukatpally</option>
+          <option value="ECIL">ECIL</option>
+          <option value="Himayathnagar">Himayathnagar</option>
+          <option value="Abids">Abids</option>
+          <option value="Mangalpally">Mangalpally</option>
+          <option value="Dilshuknagar">Dilshuknagar</option>
+          <option value="Malakpet">Malakpet</option>
+          <option value="Kachiguda">Kachiguda</option>
+          <option value="Tarnaka">Tarnaka</option>
+          <option value="BN.Reddy">BN.Reddy</option>
+          <option value="Amberpet">Amberpet</option>
+          <option value="Gachibowli">Gachibowli</option>
+          <option value="Hitechcity">Hitechcity</option>
+          <option value="Ameerpet">Ameerpet</option>
+          <option value="Nampally">Nampally</option>
+          <option value="BanjaraHills">BanjaraHills</option>
+          <option value="Khairtabad">Khairtabad</option>
+          <option value="Begumpet">Begumpet</option>
+          <option value="JubileeHills">JubileeHills</option>
+          <option value="BegumBazar">BegumBazar</option>
+          <option value="Kondapur">Kondapur</option>
+          <option value="Musheerbad">Musheerbad</option>
+          <option value="Manikonda">Manikonda</option>
+          <option value="Hyderguda">Hyderguda</option>
+          <option value="Shamshabad">Shamshabad</option>
+          <option value="Basheerbagh">Basheerbagh</option>
+          <option value="Abids">Abids</option>
+          <option value="Hastinapuram">Hastinapuram</option>
+        </select><br><br>
+        
+        <label for="groups">Choose a blood group:</label>
+        <select name="groups" id="bloodgroups">
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        </select>
+          <br>
+        <label>Age</label><input type="number" id="age"><br><br>
+        <label>Number:</label><input type="number" id="number"><br><br>
+        <label>Email</label><input type="email" id="email"><br><br>
+        <div>
+          <label>Do you want your details to be private</label><br>
+          <input type="text" id="private" placeholder="Yes/No"><br>
+        </div>
+        <br>
+        <button style="height:45px;width:85px" onclick="enterData()">submit</button>
+       
+   
+    </center>
+</body>
+</html>

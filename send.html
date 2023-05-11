@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    /*nction enterData()
+{
+const token=localStorage.getItem("token");
+
+var f=document.getElementByName("num").value;
+var x=document.getElementByName("date").value;
+const emps={
+  "Number":f,
+  "ldd":x
+  
+};
+fetch("http://localhost:8000/example"+emps,{
+  method:"PUT",
+  headers:{
+      "content-type":"application/json"
+  },
+body:JSON.stringify(emps)  
+})
+}*/
+function add(){
+    var x=document.getElementsByName("num").value;
+    var y=document.getElementsByName("date").value;
+    console.log(x,y,"in console");
+    fetch("http://localhost:8000/example",{
+        method:"POST",
+        headers: {
+            "content-type":"application/json"
+        },
+        body:JSON.stringify(y)
+    })
+}
+    </script>
+</head>
+<body>
+    
+         phone : <input type="number" name="num"><br>
+         <form action="http://localhost:8000/example" method="POST"></form>
+        last date of donate: <input type="date" name="date"><br>
+       <button type="submit" onclick="add()">Send to backend</button>
+      </form>
+</body>
+</html>
